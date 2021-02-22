@@ -32,7 +32,7 @@ class BodyGallery extends Component {
       this.loadData(nextSearch, 1);
     }
 
-    if (prevState.hits.length < this.state.hits.length) {
+    if (prevState.hits.length !== this.state.hits.length) {
       this.scrollPageToEnd();
     }
   }
@@ -80,7 +80,7 @@ class BodyGallery extends Component {
   };
 
   scrollPageToEnd = () => {
-    window.scrollBy({
+    window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: 'smooth',
     });
